@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
+import MclarenCarImg from "../../../assets/images/mclaren-orange-big.png";
+import BlobImg from "../../../assets/images/blob.svg";
+
 const TopSectionContainer = styled.div`
   min-height: 400px;
   margin-top: 6em;
@@ -9,7 +12,7 @@ const TopSectionContainer = styled.div`
 w-full
 max-w-screen-2xl
 flex
-justify
+justify-between
 pl-3
 pr-3
 lg:pl-12
@@ -82,4 +85,41 @@ const BlobContainer = styled.div`
   }
 `;
 
-export function TopSection() {}
+const StandaloneCar = styled.div`
+  width: auto;
+  height: 10em;
+  right: -6em;
+  top: -5em;
+  position: absolute;
+
+  img {
+    width: 700px;
+    heigth: 100%;
+    max-width: fit-content;
+  }
+`;
+
+export function TopSection() {
+  return (
+    <TopSectionContainer>
+      <LeftContainer>
+        <Slogan> Rent The Best Quality Car's With Us </Slogan>
+        <Description>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ad
+          perferendis veniam, laudantium autem impedit aliquam optio quam
+          expedita, voluptatum voluptate ipsa quidem. Pariatur nisi nostrum
+          quisquam qui voluptatum repellat. Architecto velit unde recusandae
+          delectus explicabo! Quod modi incidunt quibusdam vero ullam in
+        </Description>
+      </LeftContainer>
+      <RightContainer>
+        <BlobContainer>
+          <img src={BlobImg} alt="Blob image " />
+        </BlobContainer>
+        <StandaloneCar>
+          <img src={MclarenCarImg} alt="Maclaren Orange Car" />
+        </StandaloneCar>
+      </RightContainer>
+    </TopSectionContainer>
+  );
+}
